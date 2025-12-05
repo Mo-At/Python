@@ -14,7 +14,7 @@ def simulation_flechettes(n_essais):
     gains = []
     xr, yr = [], []   # rouge
     xb, yb = [], []   # bleu
-    xg, yg = [], []   # vert
+    xv, yv = [], []   # vert
 
     for i in range(n_essais):
         
@@ -37,13 +37,13 @@ def simulation_flechettes(n_essais):
             xb.append(x); yb.append(y)
         else:                       # sinon zone verte
             gains.append(-5)
-            xg.append(x); yg.append(y)
+            xv.append(x); yv.append(y)
 
     # fréquences - probabilités
     
     p_rouge = len(xr) / n_essais       
     p_bleu  = len(xb) / n_essais
-    p_vert  = len(xg) / n_essais
+    p_vert  = len(xv) / n_essais
 
     print(f"P(rouge) ≈ {p_rouge:.5f}")
     print(f"P(bleu)  ≈ {p_bleu:.5f}")
@@ -62,7 +62,7 @@ def simulation_flechettes(n_essais):
     # affichage des tirs
     
     fig, ax = plt.subplots()
-    ax.plot(xg, yg, "gx", markersize=2, label="vert (-5 €)")
+    ax.plot(xv, yv, "gx", markersize=2, label="vert (-5 €)")
     ax.plot(xb, yb, "bx", markersize=2, label="bleu (7 €)")
     ax.plot(xr, yr, "rx", markersize=2, label="rouge (15 €)")
 
