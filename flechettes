@@ -39,7 +39,7 @@ def simulation_flechettes(n_essais):
             gains.append(-5)
             xg.append(x); yg.append(y)
 
-    # fréquences - probabilités approchées
+    # fréquences - probabilités
     
     p_rouge = len(xr) / n_essais       
     p_bleu  = len(xb) / n_essais
@@ -49,7 +49,7 @@ def simulation_flechettes(n_essais):
     print(f"P(bleu)  ≈ {p_bleu:.5f}")
     print(f"P(vert)  ≈ {p_vert:.5f}")
 
-    # espérance, variance, écart-type empiriques
+    # espérance, variance, écart-type
     
     esp = sum(gains) / n_essais
     var = sum((g - esp)**2 for g in gains) / n_essais
